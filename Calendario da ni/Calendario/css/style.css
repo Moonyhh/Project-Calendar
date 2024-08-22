@@ -1,0 +1,188 @@
+html{
+
+
+  --body-color:#b96fcc62 ;
+
+  --header-color:#0e0f0f;
+
+  --header-button:#a6a6d6;
+
+  --color-weekdays: #2e0a4d;
+  
+  --box-shadow: #CBD4C2;
+
+  --hover: #b39fd4;
+
+  --current-day:#9999cc;
+
+  --event-color: #4f4e50;
+
+  --modal-event: #93a1a8;
+
+
+ --color-day:rgb(241, 234, 253);
+  
+
+}
+
+
+
+body {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: var(--body-color);
+  background-image: url(media/vapo.gif)
+}
+button {
+  width: 75px;
+  cursor: pointer;
+  color: #10001D;
+  box-shadow: 0px 0px 2px rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+
+#header {
+  padding: 10px;
+  color: var(--header-color) ;
+  font-size: 43px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial Narrow Bold, sans-serif;
+  font: bold;
+  justify-content: space-between;
+  color: rgb(15, 7, 51);
+  text-transform: uppercase;
+}
+#header button {
+  background-color:var(--header-button);
+}
+#container {
+  width: 770px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: var(--color-weekdays) ;
+  font-family: 'Times New Roman', Times, serif;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: var(--color-day);
+  margin: 5px;
+  box-shadow: 0px 0px 3px var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15%;
+  color: #242f6e;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.day:hover {
+  background-color: var(--hover);
+}
+
+.day + #currentDay {
+  background-color:var(--current-day);
+  color: #0a0a1b;
+}
+.event {
+  font-size: 13px;
+  padding: 2.px;
+  background-color: var(--event-color);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+  font-family: Gill Sans;
+}
+.padding {
+  cursor: default !important;
+  background-color: var(--body-color) !important;
+  box-shadow: none !important;
+}
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: var(--modal-event);
+  box-shadow: 0px 0px 3px rgb(7, 7, 7);
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: var(--header-color);
+}
+#saveButton, #closeButton {
+  background-color: var(--header-button);
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.borda {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 150px;
+  background-image: url(Calendario\css\media\vapovapo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+  z-index: 1000;  
+}
+
+@media (max-width: 600px) {
+  .borda {
+    width: 100px;
+    height: 100px;
+    bottom: 5px;
+    right: 5px;
+  }
+}
